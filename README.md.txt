@@ -1,59 +1,63 @@
-Network Traffic Analysis with Wireshark
+# Network Traffic Analysis with Wireshark
 
-Project Objective
-Capture, filter, and analyze network traffic using Wireshark.
+## Project Objective
+Capture, filter, and analyze network traffic using Wireshark.  
 Demonstrates understanding of protocols, packet structure, and network communication.
 
-Tools Used
-- Wireshark (latest version)
-- Computer with active network connection (Wi-Fi/Ethernet)
+## Tools Used
+- Wireshark (latest version)  
+- Computer with active network connection (Wi-Fi/Ethernet)  
 
-Step-by-Step Process
+## Step-by-Step Process
 
-Step 1: Start Capture
-- Open Wireshark and select the active network interface.
-- Leave the capture filter blank to record all traffic.
-- Browse some websites to generate traffic.
-- Screenshot: start_capture.png
+### Step 1: Start Capture
+1. Open Wireshark and select the active network interface.  
+2. Leave the capture filter blank to record all traffic.  
+3. Browse some websites to generate traffic.  
 
-Step 2: Protocol Hierarchy
-- Analyze traffic breakdown: Statistics -> Protocol Hierarchy.
-- Note common protocols (TCP, UDP, HTTP, DNS, HTTPS).
-- Screenshot: protocol_hierarchy.png
+![Start Capture](start_capture.png)
 
-Step 3: DNS Packet Analysis
-- Apply display filter: dns
-- Inspect DNS query packets.
-- Expand Frame and DNS sections.
-- Screenshot: dns_filter.png
-- Screenshot: dns_filter2.png
+### Step 2: Protocol Hierarchy
+1. Analyze traffic breakdown: `Statistics -> Protocol Hierarchy`.  
+2. Note common protocols (TCP, UDP, HTTP, DNS, HTTPS).  
 
-Step 4: HTTP Packet Analysis
-- Apply display filter: http (or tcp.port == 443 for HTTPS)
-- Inspect HTTP GET/POST requests.
+![Protocol Hierarchy](protocol_hierarchy.png)
 
-- Expand Frame and HTTP sections.
-- Screenshot: http_request.png
-- Screenshot: http_request2.png
+### Step 3: DNS Packet Analysis
+1. Apply display filter: `dns`  
+2. Inspect DNS query packets.  
+3. Expand Frame and DNS sections.  
 
-Step 5: TCP Handshake
-- Apply display filter: tcp.flags.syn == 1 && tcp.flags.ack == 0
-- Inspect the initial SYN packet of a TCP handshake.
-- Expand Frame and TCP sections.
-- Screenshot: tcp_handshake.png
-- Screenshot: tcp_handshake2.png
-- Screenshot: tcp_handshake3.png
+![DNS Filter](dns_filter.png)  
+![DNS Filter 2](dns_filter2.png)
 
-Key Findings
-- Most traffic was over TCP and HTTPS.
-- DNS queries revealed the domains visited during the capture.
-- HTTP traffic is readable; HTTPS is encrypted.
+### Step 4: HTTP Packet Analysis
+1. Apply display filter: `http` (or `tcp.port == 443` for HTTPS)  
+2. Inspect HTTP GET/POST requests.  
+3. Expand Frame and HTTP sections.  
+
+![HTTP Request](http_request.png)  
+![HTTP Request 2](http_request2.png)
+
+### Step 5: TCP Handshake
+1. Apply display filter: `tcp.flags.syn == 1 && tcp.flags.ack == 0`  
+2. Inspect the initial SYN packet of a TCP handshake.  
+3. Expand Frame and TCP sections.  
+
+![TCP Handshake 1](tcp_handshake.png)  
+![TCP Handshake 2](tcp_handshake2.png)  
+![TCP Handshake 3](tcp_handshake3.png)
+
+## Key Findings
+- Most traffic was over TCP and HTTPS.  
+- DNS queries revealed the domains visited during the capture.  
+- HTTP traffic is readable; HTTPS is encrypted.  
 - TCP handshake shows the 3-way connection setup process.
 
-Reflection
-This project taught me how to:
-- Capture and analyze network traffic
-- Filter specific protocols (DNS, HTTP, TCP)
-- Interpret packet metadata (Frame, Protocol, Bytes)
-- Identify encrypted vs unencrypted communication
-- Build up my understanding of wireshark and gaining more knowledge about how to use the tool.
+## Reflection
+This project taught me how to:  
+- Capture and analyze network traffic  
+- Filter specific protocols (DNS, HTTP, TCP)  
+- Interpret packet metadata (Frame, Protocol, Bytes)  
+- Identify encrypted vs unencrypted communication  
+- Gain a deeper understanding of Wireshark and how to use it effectively
